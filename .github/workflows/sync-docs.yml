@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: get LuaJIT
         run: |
-          git clone -single-branch --depth=1 https://github.com/LuaJIT/LuaJIT.git
+          git clone --single-branch --depth=1 https://github.com/LuaJIT/LuaJIT.git
 
       - name: Checkout Repo
         uses: actions/checkout@v3
