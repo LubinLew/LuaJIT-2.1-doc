@@ -13,6 +13,7 @@ jobs:
       - name: get LuaJIT
         run: |
           git clone --single-branch --depth=1 https://github.com/LuaJIT/LuaJIT.git
+          mv LuaJIT /tmp
 
       - name: Checkout Repo
         uses: actions/checkout@v3
@@ -20,7 +21,7 @@ jobs:
       - name: sync docs
         run: |
           rm -rf docs
-          mv ../LuaJIT/doc docs
+          mv /tmp/LuaJIT/doc docs
           mv docs/luajit.html docs/index.html
           git add -A
           git commit -m 'update'
