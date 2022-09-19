@@ -1,4 +1,4 @@
-name: sync
+name: sync-docs
 
 on:
   schedule:
@@ -23,6 +23,8 @@ jobs:
           rm -rf docs
           mv /tmp/LuaJIT/doc docs
           mv docs/luajit.html docs/index.html
+          git config --global user.email "lgbxyz@gmail.com"
+          git config --global user.name "LubinLew"
           git add -A
           git commit -m 'update'
           git push
