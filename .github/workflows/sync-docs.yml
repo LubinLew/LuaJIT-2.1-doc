@@ -23,6 +23,7 @@ jobs:
           rm -rf docs
           mv /tmp/LuaJIT/doc docs
           mv docs/luajit.html docs/index.html
+          echo "luajit.lubinlew.com" > docs/CNAME
           git config --global user.email "lgbxyz@gmail.com"
           git config --global user.name "LubinLew"
           git add -A
