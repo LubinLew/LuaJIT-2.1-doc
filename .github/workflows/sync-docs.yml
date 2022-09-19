@@ -27,6 +27,8 @@ jobs:
           mv /tmp/CNAME docs/
           git config --global user.email "lgbxyz@gmail.com"
           git config --global user.name "LubinLew"
-          git add -A
-          git commit -m 'update'
-          git push
+          if [ `git diff|wc -l` -gt 0 ] ; then
+            git add -A
+            git commit -m 'update'
+            git push
+          fi
